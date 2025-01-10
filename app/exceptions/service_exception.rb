@@ -1,0 +1,1 @@
+class ServiceException < Exception; end
