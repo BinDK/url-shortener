@@ -2,6 +2,7 @@ class UrlsController < ApplicationController
   def encode
     url_encoder = UrlEncoder.new(params[:url])
     url = url_encoder.call
+
     render json: { result: url.encoded_url }, status: :created if url
   end
 
