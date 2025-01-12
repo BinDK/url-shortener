@@ -10,6 +10,6 @@ class UrlsController < ApplicationController
     short_code = params[:url].split('/').last
     url = Url.find_by!(short_code:)
 
-    render json: { url: url.original_url } if url
+    render json: { result: url.original_url } if url
   end
 end
