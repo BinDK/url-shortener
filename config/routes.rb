@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   post 'urls/encode', to: 'urls#encode'
   get 'urls/decode', to: 'urls#decode'
+  get ':short_code', to: 'redirects#show'
 end
