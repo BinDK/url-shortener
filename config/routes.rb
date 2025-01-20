@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post 'urls/encode', to: 'urls#encode'
   get 'urls/decode', to: 'urls#decode'
   get ':short_code', to: 'redirects#show'
+
+  # Just temporary hotfix for CVE-2018-10561
+  match '/GponForm/diag_Form', to: 'application#malicious_request', via: :all
 end
