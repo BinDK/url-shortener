@@ -10,4 +10,8 @@ class ApplicationController < ActionController::API
   rescue_from ServiceException do |e|
     render json: { message: e.message }, status: :bad_request
   end
+
+  def malicious_request
+    head :forbidden
+  end
 end
